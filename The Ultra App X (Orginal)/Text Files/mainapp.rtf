@@ -1,0 +1,161 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 TrebuchetMS;\f1\fnil\fcharset134 PingFangSC-Regular;\f2\fnil\fcharset0 AppleColorEmoji;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 """\
+Libraries To Import (Use In Terminal Or Command Prompt) : -\
+python.exe -m pip install tk\
+python.exe -m pip install pygame\
+python.exe -m pip install Pillow\
+"""\
+# importing required libraries and files\
+import tkinter\
+import tkinter as tk\
+from tkinter import *\
+import sys\
+from tkinter import messagebox\
+import maincalc, mainmusic, mainrps, mainwordle\
+from PIL import Image, ImageTk\
+\
+print("\\n---------------------------------------------------------------")\
+print("          \'af\\_(
+\f1 \'a5\'c4
+\f0 )_/\'af  The Ultra App X  \'af\\_(
+\f1 \'a5\'c4
+\f0 )_/\'af           ")\
+print("---------------------------------------------------------------")\
+print("Available Apps: -")\
+print("1) Calculator ++")\
+print("2) Music Player 10.0")\
+print("3) Rock Papers Scissors Game (RPS)")\
+print("4) Wordle")\
+\
+# defining functions and commands for buttons to open apps and other things\
+def calc():\
+    '''screen.iconify()'''\
+    maincalc.main1()\
+    '''screen.deiconify()'''\
+def music():\
+    mainmusic.main2()\
+def rps():\
+    mainrps.main3()\
+def wordle():\
+    mainwordle.main4()\
+def exit():\
+    if messagebox.askokcancel("Exit", "Do You Want To Quit? 
+\f2 \uc0\u55358 \u56698 
+\f0  "):\
+        screen.destroy()\
+        print("\\nThank You For Using The Ultra App X .... \'af\\_(
+\f1 \'a5\'c4
+\f0 )_/\'af")\
+        sys.exit()\
+def credit():\
+    lines = ['Team Superduash : - ', ' 
+\f1 \'a1\'ef
+\f0  A.Ashwin - Wordle, Music Plyr', ' 
+\f1 \'a1\'ef
+\f0  S.Srinath - RPS, GUI', ' 
+\f1 \'a1\'ef
+\f0  S.Vivek - Calculator, GUI', ' 
+\f1 \'a1\'ef
+\f0  IDE Used - Pycharm And IDLE', ' 
+\f1 \'a1\'ef
+\f0  Reference From Internet']\
+    tkinter.messagebox.showinfo('Credits!', "\\n".join(lines))\
+def info():\
+    lines = ['Version - 2.0.1 ', ' 
+\f1 \'a1\'ef
+\f0  Fixed Minor Bugs And Glitches', ' 
+\f1 \'a1\'ef
+\f0  Performance Improvements', ' 
+\f1 \'a1\'ef
+\f0  GUI And Design Improvement', '
+\f1 \'a1\'ef
+\f0  Features And Emojis Added', ' 
+\f1 \'a1\'ef
+\f0  Some Problems To Be Fixed In The Future']\
+    tkinter.messagebox.showinfo('Info!', "\\n".join(lines))\
+def title():\
+    var = None\
+\
+# creating the GUI (Tkinter Window)\
+screen = tk.Tk()\
+screen.title('The Ultra App X')\
+screen.iconbitmap(r'xicon.ico')\
+screen.geometry("900x400")\
+screen.iconbitmap(r'xicon.ico')\
+screen.configure(bg="black")\
+\
+# creating images for apps\
+frame = Frame(screen, width=140, height=140)\
+frame.pack()\
+frame.place(x=80, y=80)\
+img = ImageTk.PhotoImage(Image.open("Calc.jpeg"))\
+label1 = Label(frame, image=img)\
+label1.pack()\
+\
+frame2 = Frame(screen, width=140, height=140)\
+frame2.pack()\
+frame2.place(x=288, y=80)\
+img2 = ImageTk.PhotoImage(Image.open("musicplay.png"))\
+label2 = Label(frame2, image=img2)\
+label2.pack()\
+\
+frame3 = Frame(screen, width=140, height=140)\
+frame3.pack()\
+frame3.place(x=510, y=80)\
+img3 = ImageTk.PhotoImage(Image.open("rps.png"))\
+label3 = Label(frame3, image=img3)\
+label3.pack()\
+\
+frame4 = Frame(screen, width=140, height=140)\
+frame4.pack()\
+frame4.place(x=710, y=80)\
+img4 = ImageTk.PhotoImage(Image.open("wordle.png"))\
+label4 = Label(frame4, image=img4)\
+label4.pack()\
+\
+# creating buttons with unique colours and commands\
+calculator = Button(screen, text="Calculator", command=calc)\
+calculator.config(font=('Trebuchet MS', 20), highlightbackground="#FE0221", bg="white", fg="black", padx=7, pady=7)\
+calculator.place(x=80, y=250)\
+\
+musicplayer = Button(screen, text="Music Player", command=music)\
+musicplayer.config(font=('Trebuchet MS', 20), highlightbackground="#FAFE02", bg="white", fg="black", padx=7, pady=7)\
+musicplayer.place(x=280, y=250)\
+\
+rpsbtn = Button(screen, text="RPS", command=rps)\
+rpsbtn.config(font=('Trebuchet MS', 20), highlightbackground="#1DFE02", bg="white", fg="black", padx=7, pady=7)\
+rpsbtn.place(x=538, y=250)\
+\
+wordlebtn = Button(screen, text="Wordle", command=wordle)\
+wordlebtn.config(font=('Trebuchet MS', 20), highlightbackground="#DF02FE", bg="white", fg="black", padx=7, pady=7)\
+wordlebtn.place(x=725, y=250)\
+\
+Exitbtn = Button(screen, text="Exit", command=exit)\
+Exitbtn.config(font=('Trebuchet MS', 20), highlightbackground="#02FEFA", bg="white", fg="black", padx=7, pady=7)\
+Exitbtn.place(x=410, y=336)\
+\
+creditbtn = Button(screen, text="Credits", command=credit)\
+creditbtn.config(font=('Trebuchet MS', 20), highlightbackground="#3402FE", bg="white", fg="black", padx=7, pady=7)\
+creditbtn.place(x=728, y=336)\
+\
+infobtn = Button(screen, text="Info", command=info)\
+infobtn.config(font=('Trebuchet MS', 20), highlightbackground="#FE7502", bg="white", fg="black", padx=7, pady=7)\
+infobtn.place(x=70, y=336)\
+\
+titlebtn = Button(screen, text="
+\f2 \uc0\u55357 \u56613 
+\f0  The Ultra App X 
+\f2 \uc0\u55357 \u56613 
+\f0 ", command=title)\
+titlebtn.config(font=('Trebuchet MS', 20), highlightbackground="#FE7502", bg="white", fg="black", padx=7, pady=7)\
+titlebtn.place(x=330, y=10)\
+\
+screen.mainloop()\
+}

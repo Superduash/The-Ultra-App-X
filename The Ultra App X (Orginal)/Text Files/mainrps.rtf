@@ -1,0 +1,155 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset134 PingFangSC-Regular;\f2\fnil\fcharset128 HiraginoSans-W3;
+\f3\fnil\fcharset0 AppleSymbols;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 # importing the random module (No GUI Used)\
+import random\
+\
+# creating a function to open this app from the main app\
+def main3():\
+    print("\\n-----------------------------------------------------------------")\
+    print("          (
+\f1 \'a5\'c4
+\f0 )   Rock! Paper! And Scissors! Shoot!!   (
+\f1 \'a5\'c4
+\f0 )         ")\
+    print("-------------------------------------------------------------------")\
+    while True:\
+        options = ['Rock', 'Paper', 'Scissor']\
+        # input from user asking some details (No Of Rounds and Name)\
+        username = input("Enter your name : - ")\
+        name = username.title()\
+        while True:\
+            rounds = input("Enter The Number Of Rounds (min 2): - ")\
+            # to show error if the user's input is not a number\
+            if rounds == '1':\
+                print("There Should Be Minimum 2 Rounds... Please Try Again (
+\f2 \uc0\u9649 
+\f0 \uc0\u728 
+\f1 \'a6\'e2
+\f0 \uc0\u728 
+\f2 \uc0\u9649 
+\f0 )\\n")\
+                continue\
+            elif rounds.isdigit():\
+                num = int(rounds)\
+                CompScore = 0\
+                PlayerScore = 0\
+                NumberOfRounds: int = 1\
+                gameOn = True\
+                print(f"\\nWelcome ( \{name\} ) !! Enjoy The Game!! Hope You Win!! 
+\f3 \uc0\u10745 
+\f0 (
+\f3 \uc0\u10625 
+\f0 \uc0\u7447 
+\f3 \uc0\u10625 
+\f0 )
+\f3 \uc0\u10744 
+\f0 ")\
+                while NumberOfRounds < num:\
+                    while True:\
+                        print("------------------------------------------------------")\
+                        print(f"Round No: - \{NumberOfRounds\}")\
+                        user_action = input("\\nEnter Rock(r)/ Paper(p)/ Scissor(s) : - ").title()\
+                        # confirming the user action\
+                        if user_action == "R" or user_action == "Rock":\
+                            ua = 'Rock'\
+                            NumberOfRounds += 1\
+                        elif user_action == "P" or user_action == "Paper":\
+                            ua = 'Paper'\
+                            NumberOfRounds += 1\
+                        elif user_action == "S" or user_action == "Scissor" or user_action == "Scissors":\
+                            ua = 'Scissor'\
+                            NumberOfRounds += 1\
+                        else:\
+                            print('Invalid Option...Please Try Again (
+\f2 \uc0\u9649 
+\f0 \uc0\u728 
+\f1 \'a6\'e2
+\f0 \uc0\u728 
+\f2 \uc0\u9649 
+\f0 )')\
+                            continue\
+                        # deciding the computer action using the random module\
+                        computer_action = random.choice(options)\
+                        # comparing the user and computer action to see who won the round\
+                        print('\\nYou Chose (', ua, ') , And The Computer Chose (', computer_action, ')')\
+                        if ua == computer_action:\
+                            print(f"Both Players Selected \{ua\}.So, It's A Tie! -_-")\
+                        elif ua == "Rock" and computer_action == "Scissor":\
+                            print("Rock Crushes Scissor... U Win (
+\f1 \'a5\'c4
+\f0 )")\
+                            PlayerScore += 1\
+                        elif ua == "Scissor" and computer_action == "Rock":\
+                            print("Rock Smashes Scissor... U Lose (
+\f1 \'a8\'69\'a9\'6e\'a8\'69
+\f0 )")\
+                            CompScore += 1\
+                        elif ua == "Paper" and computer_action == "Rock":\
+                            print("Paper Covers Rock... U Win (
+\f1 \'a5\'c4
+\f0 )")\
+                            PlayerScore += 1\
+                        elif ua == 'Rock' and computer_action == 'Paper':\
+                            print('Paper Covers Rock... U Lose (
+\f1 \'a8\'69\'a9\'6e\'a8\'69
+\f0 )')\
+                            CompScore += 1\
+                        elif ua == 'Scissor' and computer_action == "Paper":\
+                            print("Scissor Cuts Paper... U Win (
+\f1 \'a5\'c4
+\f0 )")\
+                            PlayerScore += 1\
+                        elif ua == 'Paper' and computer_action == "Scissor":\
+                            print("Scissor Cuts Paper... U Lose (
+\f1 \'a8\'69\'a9\'6e\'a8\'69
+\f0 )")\
+                            CompScore += 1\
+                        # to end the game after the given No. of Rounds\
+                        if NumberOfRounds == num + 1:\
+                            gameOn = False\
+                            break\
+                # to display the winner (who won the most rounds).. or draw match if it's a tie\
+                if PlayerScore == CompScore:\
+                    print("\\nDraw Match!! -_-")\
+                elif PlayerScore > CompScore:\
+                    print(f"\\nCongrats \{name\}, You won the game !! 
+\f3 \uc0\u10745 
+\f0 (
+\f3 \uc0\u10625 
+\f0 \uc0\u7447 
+\f3 \uc0\u10625 
+\f0 )
+\f3 \uc0\u10744 
+\f0 ")\
+                else:\
+                    print(f"\\nOops Computer won the game!! Better luck next time \{name\}! (
+\f2 \uc0\u9649 
+\f0 \uc0\u728 
+\f1 \'a6\'e2
+\f0 \uc0\u728 
+\f2 \uc0\u9649 
+\f0 )")\
+\
+                # Play Again Option\
+                play_again = input("\\nPlay again? (y/n): ")\
+                if play_again.lower() != "y":\
+                    print("\\nHope You Enjoyed The Game.. See You Soon (
+\f1 \'a5\'c4
+\f0 )")\
+                    return\
+            else:\
+                print("Invalid Option.. Please Try Again (
+\f2 \uc0\u9649 
+\f0 \uc0\u728 
+\f1 \'a6\'e2
+\f0 \uc0\u728 
+\f2 \uc0\u9649 
+\f0 )\\n")\
+                continue\
+}
